@@ -6,8 +6,9 @@
 rule test
 {
     strings:
-        $identifier = "Lorem"
+        $id_hit = "Lorem"
+        $id_not = "trust"
 
     condition:
-        $identifier
+        $id_hit and not $id_not
 }

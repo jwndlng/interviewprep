@@ -29,3 +29,11 @@ pprint(matches)
 #                         'identifier': '$identifier',
 #                         'offset': 2337}],
 #            'tags': []}]}
+
+
+with open(base_dir.joinpath('sample_2.txt'), 'rb') as f:
+  matches = rules.match(data=f.read())
+
+pprint(matches)
+
+# no match because "trust" is within the file
