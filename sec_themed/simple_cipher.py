@@ -13,7 +13,7 @@ def decrypt(text, shift):
     return ''.join(charList)
 
 
-text = "Das ist ein Test"
+text = "This is a simple simple test"
 print(f"Initial: {text}")
 encrypted = encrypt(text, 7)
 print(f"Encrypted: {encrypted}")
