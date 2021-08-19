@@ -6,7 +6,7 @@ from pprint import pprint
 base_dir = pathlib.Path(__file__).parent.absolute()
 
 
-rule_path = base_dir.joinpath('rules', 'test.yar').as_posix()
+rule_path = base_dir.joinpath('rules', 'string_match.yar').as_posix()
 
 rules = yara.compile(filepath=rule_path)
 
