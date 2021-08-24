@@ -16,16 +16,16 @@ def get_random_specialchar():
     return special_chars[secrets.randbelow(4)]
 
 def contains_lowercase(passwd) -> bool:
-    return re.search("[a-z]", passwd)
+    return bool(re.search("[a-z]", passwd))
 
 def contains_uppercase(passwd) -> bool:
-    return re.search("[A-Z]", passwd)
+    return bool(re.search("[A-Z]", passwd))
 
 def contains_numeric(passwd) -> bool:
-    return re.search("[0-9]", passwd)
+    return bool(re.search("[0-9]", passwd))
 
 def contains_specialchar(passwd) -> bool:
-    return re.search("[?+!#]", passwd)
+    return bool(re.search("[?+!#]", passwd))
 
 def validate_passwd(passwd) -> bool:
     if not contains_lowercase(passwd):return False
@@ -49,12 +49,7 @@ def _gen_passwd(length) -> str:
 def gen_passwd(length=8) -> str:
     if length < 4:
         raise Exception("Password must have a length of 4 characters or more!")
-    # Optimization
-    # Add all required types once
-    # Fill up randomly
-    # -> Shuffle
     passwd = _gen_passwd(length)
-    i = 0
     while not validate_passwd(passwd):
         passwd = _gen_passwd(length)
     return passwd
