@@ -2,3 +2,4 @@ paramiko
 yara
 pypdf2
 opencv-python
+pycryptodome
